@@ -11,23 +11,30 @@ interface Project {
 };
 
 const projects: Project[] = [{
-    name: 'Papersend.io',
-    description: 'Papersend is the free alternative to DocSend for secure document sharing, tracking, and Data Rooms. Customize branding, control access, and protect your documents.',
+    name: 'Pomodoro',
+    description: 'Pomodoro is a mobile app built with React Native and Expo following a Youtube tutorial. Whose objective is to use the famous Pomodoro Technique. Something extra that I have added and that was not included in the tutorial is a button to play background music, which can be activated and deactivated whenever you want. Also regarding the sound and something extra that I have added has been an alarm sound when the counter ends.',
     link: {
-        url: 'https://papersend.io/',
+        url: 'https://github.com/jcpenfie/pomodoro',
     }
 }, {
-    name: 'Qivi.io',
-    description: 'Qivi is an all-in-one application designed to streamline business operations, enhance productivity, and maximize success. Data security is a priority.',
+    name: 'Linkzipper',
+    description: 'Have you ever needed to have all your social media links in one place? Linkzipper is the solution. It was my final project for my multi-platform higher degree. The design is based on another existing website called https://manylink.co/ and I have added extra things such as an option to explore and find other accounts and also if you are logged in you can save profiles by liking it.',
     link: {
-        url: 'https://qivi.io/'
+        url: 'https://github.com/jcpenfie/Linkzipper-angular'
     }
 }, {
-    name: 'TECHPOINT.de',
-    description: 'TECHPOINT is a local IT service provider based in the Starnberg district and the Fünfseenland region, specializing in delivering reliable and modern IT solutions.',
+    name: 'Fictional Newspaper',
+    description: 'Web application to view news from a newspaper with a control panel for employees with the possibility of uploading their news. Created with Laravel and tailwind.',
     link: {
-        url: 'https://techpoint.de/'
+        url: 'https://github.com/jcpenfie/PeriodicoLaravel'
     }
+},{
+    name: 'Looking for more?',
+    description: 'Do you want to see all my projects?',
+    link: {
+        url: 'https://github.com/jcpenfie?tab=repositories',
+        buttonLabel:"See all my projects",
+    },
 }];
 ---
 
@@ -39,7 +46,7 @@ const projects: Project[] = [{
 
         {projects.map(project =>
 
-            <div class="flex flex-col justify-center items-start border border-gray-700 rounded-lg p-4 bg-black">
+            <div class="flex flex-col justify-center items-start border border-gray-700 rounded-lg p-4 bg-slate-900">
 
                 <h3 class="text-xl font-semibold text-white mb-2">
                     {project.name}

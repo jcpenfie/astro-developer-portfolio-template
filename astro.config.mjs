@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     output: 'static',
     trailingSlash: 'always',
-    site: 'https://devidev.io',
+    site: 'https://jcpenfie.netlify.app/',
 
     // Single page, no prefetch needed
     prefetch: false,

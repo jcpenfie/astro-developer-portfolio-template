@@ -1,12 +1,13 @@
 ---
 import { Picture } from 'astro:assets';
-import ProfilePicture from '../assets/profile.png';
+import ProfilePicture from '../assets/profile.avif';
+import cvpdf from '../assets/pdf/JuanCarlos-CV.pdf';
 
 const profile = {
-    name: 'Dejan Vi.',
+    name: 'Juan Carlos',
     title: 'Full Stack Developer',
-    location: 'Munich, Germany',
-    description: 'Passionate web developer focused on creating clean, efficient, and scalable web applications with a modern tech stack. Specialized in Angular, TypeScript, and Supabase, delivering responsive and intuitive user interfaces. Even my name includes "dev".'
+    location: 'Seviile, Spain',
+    description: `+2 years experience as a Full Stack Web Developer. My commitment to clean code and timely project delivery aligns with your company's goals, making me a valuable asset for innovative solutions.`
 };
 ---
 
@@ -16,7 +17,7 @@ const profile = {
 
         <Picture
             src={ProfilePicture}
-            formats={['webp']}
+            formats={['avif']}
             width={96}
             height={96}
             alt={'Profile picture ' + profile.name}
@@ -26,7 +27,7 @@ const profile = {
 
         <div>
 
-            <h1 class="text-2xl font-extrabold mb-1 inline-block relative text-text-primary">
+            <h1 class="text-2xl font-extrabold mb-1 inline-block relative ">
                 {profile.name}
             </h1>
 
@@ -47,4 +48,20 @@ const profile = {
         {profile.description}
     </p>
 
+    <a class="w-full" href={cvpdf} download="JuanCarlos-CV.pdf">
+            <button
+                class="
+                    w-full px-4 py-2.5 mt-4 text-center
+
+                    border border-gray-600 rounded-lg
+
+                    hover:text-primary
+                    hover:border-primary
+                    ">
+                    
+                        Download CV
+                
+            </button>
+    </a>
+                
 </div>

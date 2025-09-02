@@ -13,44 +13,48 @@ interface TechStack {
    frontend: string[];
 };
 
-type ContactType = 'github' | 'twitter' | 'linkedIn' | 'xing' | 'email';
+type ContactType = 'github' | 'youtube' | 'linkedIn' | 'linktree';;
 
 const techStack: TechStack = {
     devOps: [
         'GitLab',
         'GitHub',
-        'Cloudflare',
-        'Docker'
+        'Docker',
+        'Jenkins'
     ],
     frontend: [
+        'React',
         'Angular',
         'JavaScript',
         'TypeScript',
+        'Laravel',
         'TailwindCSS',
+        'Bootstrap',
         'PrimeNG',
         'Astro',
-        'Ionic',
-        'Stencil',
-        'Capacitor',
         'SCSS',
         'Markdown',
-        'WordPress'
+        'WordPress',
+        'Kotlin Multiplatform'
     ],
     backend: [
+        'Java',
+        'Spring Boot',
+        'JHipster',
         'Supabase',
         'Node.js',
-        'Bun',
-        'Deno',
+        'JPA',
+        'Swagger',
         'PostgreSQL',
         'MySQL',
-        'S3 Storage',
-        'Resend'
+        'Astro',
+        'Python'
     ]
 };
 
 // Developer profile
 const me: Developer = {
-    name: 'Dejan Vi.',
+    name: 'Juan Carlos',
     skills: [
         ...techStack.devOps,
         ...techStack.backend,
@@ -61,7 +65,7 @@ const me: Developer = {
         'Security',
         'Privacy',
         'Performance',
-        'Self-Hosting',
+        'Self-Learning',
         'Networking'
     ]
 };
@@ -70,17 +74,15 @@ const me: Developer = {
 const contact = (type: ContactType): string => {
     switch (type) {
         case 'github':
-            return 'https://github.com/devidevio';
-        case 'twitter':
-            return 'https://x.com/devidev_io';
+            return 'https://github.com/jcpenfie';
+        case 'youtube':
+            return 'https://www.youtube.com/@JohnnyFinchDev';
         case 'linkedIn':
             return 'https://www.linkedin.com/in/dejan-vi';
-        case 'xing':
-            return 'https://www.xing.com/profile/Dejan_Vintonjiv';
-        case 'email':
-            return 'hi@devidev.io';
+        case 'linktree':
+            return 'https://linktr.ee/jcpenfie';
         default:
-            return 'Send fax.';
+            return 'Send hugs';
     }
 };
 
