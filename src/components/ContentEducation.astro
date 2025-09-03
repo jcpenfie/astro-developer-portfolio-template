@@ -1,0 +1,138 @@
+---
+interface Experience {
+    position: string;
+    company: string;
+    period: string;
+    location: string;
+    description: string;
+    achievements: string[];
+    technologies: string[];
+    status: 'current' | 'completed';
+    link?: {
+        url?: string;
+        target?: string;
+        title?: string;
+        buttonLabel?: string;
+    };
+}
+
+const experiences: Experience[] = [
+    {
+        position: 'Student',
+        company: 'I.E.S. Aguadulce',
+        period: 'sept. 2024 - jun. 2029',
+        location: '',
+        description: 'Higher Vocational Training, Development of multiplatform applications',
+        achievements: [
+            '',
+            '',
+            '',
+            ''
+        ],
+        technologies: [''],
+        status: 'completed',
+    },
+    {
+        position: 'Student',
+        company: 'I.E.S. Ruiz Gijon',
+        period: 'sept. 2019 - jun. 2022',
+        location: '',
+        description: '',
+        achievements: [
+            '',
+            '',
+            '',
+            ''
+        ],
+        technologies: [''],
+        status: 'completed'
+    },
+    {
+        position: 'Student',
+        company: 'I.E.S. Almudeyne',
+        period: '2017 - 2019',
+        location: '',
+        description: '',
+        achievements: [
+            '',
+            '',
+            '',
+            ''
+        ],
+        technologies: [''],
+        status: 'completed'
+    }
+];
+---
+
+<div>
+    <!-- Header opcional -->
+    <!-- <h2 class="text-2xl font-bold text-white mb-6">Experiencia Laboral</h2> -->
+
+    <div class="relative">
+        <!-- Línea vertical del timeline -->
+        <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary to-primary hidden md:block"></div>
+        
+        <div class="space-y-6">
+            {experiences.map((experience) => (
+                <div class="relative flex items-start">
+                    <!-- timeline indicador -->
+                    <div class="hidden md:flex absolute left-0 w-12 h-12 items-center justify-center">
+                        <div class={`w-4 h-4 rounded-full border-4 border-slate-900 ${
+                            experience.status === 'current' 
+                                ? 'bg-primary shadow-lg shadow-primary/50' 
+                                : 'bg-gray-600'
+                        }`}>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex flex-col justify-start items-start border border-gray-700 rounded-lg p-6 bg-slate-900 w-full md:ml-12">
+                        
+                        <!-- Header with state -->
+                        <div class="flex justify-between items-start w-full mb-4">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="text-xl font-semibold text-white">
+                                        {experience.position}
+                                    </h3>
+                                    {experience.status === 'current' && (
+                                        <span class="px-2 py-1 text-xs font-medium bg-primary/20 text-primary rounded-full border border-primary/30">
+                                            Actual
+                                        </span>
+                                    )}
+                                </div>
+                                
+                                <h4 class="text-lg font-medium text-primary mb-2">
+                                    {experience.company}
+                                </h4>
+                                
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-400 mb-4">
+                                    <span class="flex items-center gap-1">
+                                        📅 {experience.period}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Animación opcional para el indicador actual */
+    .bg-primary {
+        animation: pulse-glow 2s infinite;
+    }
+
+    @keyframes pulse-glow {
+        0%, 100% {
+            box-shadow: 0 0 5px var(--primary-color, #3b82f6);
+        }
+        50% {
+            box-shadow: 0 0 15px var(--primary-color, #3b82f6), 0 0 20px var(--primary-color, #3b82f6);
+        }
+    }
+</style>
