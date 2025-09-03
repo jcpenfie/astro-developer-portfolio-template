@@ -20,7 +20,7 @@ const experiences: Experience[] = [
     {
         position: 'Student',
         company: 'I.E.S. Aguadulce',
-        period: 'sept. 2024 - jun. 2029',
+        period: 'sept. 2024 - Present',
         location: '',
         description: 'Higher Vocational Training, Development of multiplatform applications',
         achievements: [
@@ -30,14 +30,14 @@ const experiences: Experience[] = [
             ''
         ],
         technologies: [''],
-        status: 'completed',
+        status: 'current',
     },
     {
         position: 'Student',
         company: 'I.E.S. Ruiz Gijon',
         period: 'sept. 2019 - jun. 2022',
         location: '',
-        description: '',
+        description: 'Higher Technician in Web Application Development',
         achievements: [
             '',
             '',
@@ -51,7 +51,7 @@ const experiences: Experience[] = [
         position: 'Student',
         company: 'I.E.S. Almudeyne',
         period: '2017 - 2019',
-        location: '',
+        location: 'Technician in Microcomputer Systems and Networks',
         description: '',
         achievements: [
             '',
@@ -112,6 +112,11 @@ const experiences: Experience[] = [
                                         📅 {experience.period}
                                     </span>
                                 </div>
+
+                                <!-- Description -->
+                                <p class="text-gray-400 mb-4 leading-relaxed">
+                                    {experience.description}
+                                </p>
                             </div>
                         </div>
                     </div>
