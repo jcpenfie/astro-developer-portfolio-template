@@ -1,0 +1,242 @@
+---
+interface Experience {
+    position: string;
+    company: string;
+    period: string;
+    location: string;
+    description: string;
+    achievements: string[];
+    technologies: string[];
+    status: 'current' | 'completed';
+    link?: {
+        url?: string;
+        target?: string;
+        title?: string;
+        buttonLabel?: string;
+    };
+}
+
+const experiences: Experience[] = [
+    {
+        position: 'Back-end web developer',
+        company: 'Dinamic Area Software',
+        period: 'feb. 2024 - sept. 2024',
+        location: 'Seville, Spain',
+        description: 'I develop full-stack web applications using JHipster and Spring Boot. I create the REST API and Swagger documentation. I program both the backend and frontend using technologies such as Java, Angular, and React. I implement secure web services that communicate with relational databases. I perform unit and integration testing to ensure code quality. I deploy applications in production and pre-production environments. I optimize application performance, scalability, and security. I work with agile methodologies such as Scrum, actively participating in the different phases of the software lifecycle.',
+        achievements: [
+            '',
+            '',
+            '',
+            ''
+        ],
+        technologies: ['Java', 'Spring Boot', 'JHipster', 'Swagger', 'JetBrains', 'Jenkins', 'GitLab'],
+        status: 'completed',
+        // link: {
+        //     url: 'https://techcorp-solutions.com',
+        //     buttonLabel: 'Ver empresa'
+        // }
+    },
+    {
+        position: 'Web Developer',
+        company: 'Ayesa',
+        period: 'mar. 2022 - feb. 2024',
+        location: 'Seville, Spain',
+        description: 'I was involved in the development, maintenance, and optimization of enterprise applications using Java and frameworks such as Spring Boot, Spring MVC, Struts, and Hibernate, applying object-oriented programming (OOP) principles and software development best practices. I worked on the design and consumption of web services, database integration through JDBC, PL/SQL, and MySQL, as well as SQL query optimization to enhance system performance. I contributed to technology modernization projects, migrating applications to Spring Framework–based architectures and developing dynamic and interactive user interfaces with React.js and Redux.js, while also maintaining legacy applications with JSP. I used Eclipse and Visual Studio as development environments, managing version control and workflows with Git and Maven. I was also responsible for software installation, debugging, and issue resolution, ensuring service quality and continuity.My role included both programming and functional analysis, as well as specialized technical support, ensuring the delivery of stable, scalable solutions aligned with business requirements.',
+        achievements: [
+            '',
+            '',
+            '',
+            ''
+        ],
+        technologies: ['Java', 'Spring Boot', 'Spring MVC', 'Spring Framework', 'Hibernate', 'React.js', 'Redux.js', 'JavaScript', 'SQL', 'PL/SQL', 'MySQL', 'JDBC', 'Git', 'Maven'],
+        status: 'completed'
+    },
+    {
+        position: 'IT technician',
+        company: 'City Council of Los Palacios and Villafranca',
+        period: 'mar. 2021 - sept. 2021',
+        location: 'Los Palacios y Villafranca, Spain',
+        description: 'I provided specialized technical support to users and internal teams, ensuring service continuity and smooth system operations. I managed and maintained relational databases, guaranteeing their availability, integrity, and efficiency. Additionally, I actively contributed to incident resolution, identifying root causes and implementing effective solutions to minimize downtime and enhance customer satisfaction.',
+        achievements: [
+            '',
+            '',
+            '',
+            ''
+        ],
+        technologies: ['Technical Support', 'Relational Databases', 'Incident Resolution'],
+        status: 'completed'
+    },
+    {
+        position: 'IT technician',
+        company: '123App.es',
+        period: 'nov. 2019 - feb. 2020',
+        location: 'Los Palacios y Villafranca, Spain',
+        description: `I worked in comprehensive technical support roles, providing both hardware and software solutions. I repaired and maintained computers and laptops, as well as smartphones, ensuring their proper functioning and prolonging their useful life. I participated in software installation and configuration, ensuring compatibility and optimal performance on users' devices. I also installed internet services using Fibair technology, managing the correct configuration of network equipment and providing customer assistance throughout the startup process. These experiences strengthened my skills in technical support, customer service, and resolving technological issues efficiently and effectively.`,
+        achievements: [
+            '',
+            '',
+            '',
+            ''
+        ],
+        technologies: ['Technical Support', 'Hardware Repair', 'Software Installation', 'Smartphone Repair', 'Laptop Repair', 'Internet Installation (Fibair)', 'Troubleshooting', 'Customer Service'],
+        status: 'completed'
+    },
+    {
+        position: 'IT technician',
+        company: 'Voxpro',
+        period: 'jun. 2019 - sept. 2019',
+        location: 'Cork, Ireland',
+        description: 'I provided specialized technical support to users and internal teams, ensuring service continuity and smooth system operations. I managed and maintained relational databases, guaranteeing their availability, integrity, and efficiency. Additionally, I actively contributed to incident resolution, identifying root causes and implementing effective solutions to minimize downtime and enhance customer satisfaction.',
+        achievements: [
+            '',
+            '',
+            '',
+            ''
+        ],
+        technologies: ['Technical Support', 'Incident Resolution', 'Hardware Repair', 'Customer Service'],
+        status: 'completed'
+    },
+    {
+        position: 'IT technician',
+        company: '123App.es',
+        period: 'mar. 2019 - jun. 2019',
+        location: 'Los Palacios y Villafranca, Spain',
+        description: `I worked in comprehensive technical support roles, providing both hardware and software solutions. I repaired and maintained computers and laptops, as well as smartphones, ensuring their proper functioning and prolonging their useful life. I participated in software installation and configuration, ensuring compatibility and optimal performance on users' devices. I also installed internet services using Fibair technology, managing the correct configuration of network equipment and providing customer assistance throughout the startup process. These experiences strengthened my skills in technical support, customer service, and resolving technological issues efficiently and effectively.`,
+        achievements: [
+            '',
+            '',
+            '',
+            ''
+        ],
+        technologies: ['Technical Support', 'Hardware Repair', 'Software Installation', 'Smartphone Repair', 'Laptop Repair', 'Internet Installation (Fibair)', 'Troubleshooting', 'Customer Service'],
+        status: 'completed'
+    }
+];
+---
+
+<div>
+    <!-- Header opcional -->
+    <!-- <h2 class="text-2xl font-bold text-white mb-6">Experiencia Laboral</h2> -->
+
+    <div class="relative">
+        <!-- Línea vertical del timeline -->
+        <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-cyan-900 to-gray-600 hidden md:block"></div>
+        
+        <div class="space-y-6">
+            {experiences.map((experience) => (
+                <div class="relative flex items-start">
+                    <!-- timeline indicador -->
+                    <div class="hidden md:flex absolute left-0 w-12 h-12 items-center justify-center">
+                        <div class={`w-4 h-4 rounded-full border-4 border-slate-900 ${
+                            experience.status === 'current' 
+                                ? 'bg-primary shadow-lg shadow-primary/50' 
+                                : 'bg-gray-600'
+                        }`}>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex flex-col justify-start items-start border border-gray-700 rounded-lg p-6 bg-slate-900 w-full md:ml-12">
+                        
+                        <!-- Header with state -->
+                        <div class="flex justify-between items-start w-full mb-4">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="text-xl font-semibold text-white">
+                                        {experience.position}
+                                    </h3>
+                                    {experience.status === 'current' && (
+                                        <span class="px-2 py-1 text-xs font-medium bg-primary/20 text-primary rounded-full border border-primary/30">
+                                            Actual
+                                        </span>
+                                    )}
+                                </div>
+                                
+                                <h4 class="text-lg font-medium text-primary mb-2">
+                                    {experience.company}
+                                </h4>
+                                
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-400 mb-4">
+                                    <span class="flex items-center gap-1">
+                                        📅 {experience.period}
+                                    </span>
+                                    <span class="hidden sm:block">•</span>
+                                    <span class="flex items-center gap-1">
+                                        📍 {experience.location}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-gray-400 mb-4 leading-relaxed">
+                            {experience.description}
+                        </p>
+
+                        {/* <!-- Main achievements -->
+                        <div class="mb-4 w-full">
+                            <h5 class="text-sm font-semibold text-white mb-2">Main achievements:</h5>
+                            <ul class="space-y-1">
+                                {experience.achievements.map((achievement) => (
+                                    <li class="text-sm text-gray-400 flex items-start">
+                                        <span class="text-primary mr-2 mt-1">•</span>
+                                        {achievement}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div> */}
+
+                        <!-- Technologies -->
+                        <div class="mb-4 w-full">
+                            <h5 class="text-sm font-semibold text-white mb-2">Technologies used:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                {experience.technologies.map((tech) => (
+                                    <span class="px-2 py-1 text-xs bg-gray-800 text-gray-300 rounded border border-gray-700">
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <!-- Opcional Link -->
+                        {experience.link?.url && (
+                            <a
+                                href={experience.link.url}
+                                title={experience.link.title || experience.company}
+                                target={experience.link.target || '_blank'}
+                                class="
+                                    w-full px-4 py-2.5 mt-2 text-center text-sm
+
+                                    border border-gray-600 rounded-lg
+
+                                    hover:text-primary
+                                    hover:border-primary
+                                    
+                                    transition-colors duration-200
+                                "
+                            >
+                                {experience.link.buttonLabel || 'Ver más información'}
+                            </a>
+                        )}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Animación opcional para el indicador actual */
+    .bg-primary {
+        animation: pulse-glow 2s infinite;
+    }
+
+    @keyframes pulse-glow {
+        0%, 100% {
+            box-shadow: 0 0 5px var(--primary-color, #3b82f6);
+        }
+        50% {
+            box-shadow: 0 0 15px var(--primary-color, #3b82f6), 0 0 20px var(--primary-color, #3b82f6);
+        }
+    }
+</style>
